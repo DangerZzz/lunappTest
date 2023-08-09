@@ -72,7 +72,13 @@ class _UrlPageState extends State<UrlPage> {
                   ),
                 ),
                 child: _loadingStatus
-                    ? const AdaptiveActivityIndicator()
+                    ? const Center(
+                        child: SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: AdaptiveActivityIndicator(),
+                        ),
+                      )
                     : Center(
                         child: Text(
                           'Начать урок',
