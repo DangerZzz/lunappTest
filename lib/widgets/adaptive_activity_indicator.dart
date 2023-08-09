@@ -10,7 +10,7 @@ class AdaptiveActivityIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (Theme.of(context).platform != TargetPlatform.iOS)
-        ? Container(
+        ? SizedBox(
             height: 20.0,
             width: 20.0,
             child: CircularProgressIndicator(

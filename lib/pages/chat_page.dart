@@ -155,30 +155,28 @@ class _ChatPageState extends State<ChatPage> {
   /// Функция нажатия на вариант ответа
   void _onVariantTap(Answers answer) {
     if (answer.correct ?? false) {
-      if (isCorrectAnswer) {
-        setState(() {
-          messages.removeAt(index);
+      setState(() {
+        messages.removeAt(index);
 
-          messages.add(
-            JsonData(
-              answers: null,
-              text: messages.last.text,
-              role: messages.last.role,
-              messageType: messages.last.messageType,
-            ),
-          );
+        messages.add(
+          JsonData(
+            answers: null,
+            text: messages.last.text,
+            role: messages.last.role,
+            messageType: messages.last.messageType,
+          ),
+        );
 
-          messages.add(
-            JsonData(
-              answers: null,
-              text: answer.text,
-              role: RoleType.user,
-              messageType: MessageType.text,
-            ),
-          );
-          index++;
-        });
-      }
+        messages.add(
+          JsonData(
+            answers: null,
+            text: answer.text,
+            role: RoleType.user,
+            messageType: MessageType.text,
+          ),
+        );
+        index++;
+      });
     } else {
       setState(() {
         isCorrectAnswer = false;

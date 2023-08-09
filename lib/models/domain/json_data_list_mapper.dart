@@ -32,7 +32,7 @@ JsonData jsonDataMapper(JsonDataDTO data) {
   for (var answer in (data.answers ?? [])) {
     answers.add(
       Answers(
-        correct: (answer.correct == 'true' ?? false) ? true : false,
+        correct: (answer.correct == 'true') ? true : false,
         text: answer.text,
       ),
     );
