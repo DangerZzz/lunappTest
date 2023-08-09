@@ -1,11 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// [AdaptiveActivityIndicator] отображающийся в зависимости от системы
 class AdaptiveActivityIndicator extends StatelessWidget {
+  ///
   final Brightness brightness;
 
-  const AdaptiveActivityIndicator({Key? key, this.brightness = Brightness.dark})
-      : super(key: key);
+  ///
+  final double radius;
+
+  ///
+  const AdaptiveActivityIndicator({
+    Key? key,
+    this.brightness = Brightness.dark,
+    this.radius = 20,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +23,6 @@ class AdaptiveActivityIndicator extends StatelessWidget {
             height: 20.0,
             width: 20.0,
             child: CircularProgressIndicator(
-              value: null,
               strokeWidth: 1.0,
               valueColor: AlwaysStoppedAnimation<Color>(
                 brightness == Brightness.dark
@@ -25,9 +33,7 @@ class AdaptiveActivityIndicator extends StatelessWidget {
           )
         : CupertinoTheme(
             data: CupertinoTheme.of(context).copyWith(brightness: brightness),
-            child: const CupertinoActivityIndicator(
-              animating: true,
-            ),
+            child: CupertinoActivityIndicator(radius: radius / 2),
           );
   }
 }

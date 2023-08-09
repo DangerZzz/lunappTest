@@ -32,12 +32,16 @@ class JsonData {
   /// варианты ответов
   final List<Answers>? answers;
 
+  ///Флаг отправки сообщения
+  final bool isSend;
+
   ///конструктор [JsonData]
   JsonData({
     required this.answers,
     required this.text,
     required this.role,
     required this.messageType,
+    required this.isSend,
   });
 }
 

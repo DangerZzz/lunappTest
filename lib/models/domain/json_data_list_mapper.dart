@@ -43,5 +43,6 @@ JsonData jsonDataMapper(JsonDataDTO data) {
     role: roleType,
     messageType: messageType,
     answers: answers,
+    isSend: roleType == RoleType.bot ? true : false,
   );
 }

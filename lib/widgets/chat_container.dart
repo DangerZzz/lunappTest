@@ -38,14 +38,10 @@ class ChatContainer extends StatelessWidget {
               maxWidth: MediaQuery.of(context).size.width * .7,
             ),
             margin: margin,
-            child: Stack(
-              children: <Widget>[
-                Text(
-                  text,
-                  style: textStyle,
-                  textAlign: TextAlign.left,
-                ),
-              ],
+            child: Text(
+              text,
+              style: textStyle,
+              textAlign: TextAlign.left,
             ),
           ),
         ),
