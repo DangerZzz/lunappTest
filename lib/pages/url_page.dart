@@ -20,6 +20,15 @@ class _UrlPageState extends State<UrlPage> {
   bool _loadingStatus = false;
 
   @override
+  void initState() {
+    super.initState();
+    setState(() {
+      _urlController.text =
+          'https://lunappstudio.com/hr/test_spanish_numerals.json';
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(155, 155, 155, 1),
