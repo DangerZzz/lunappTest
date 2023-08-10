@@ -204,6 +204,7 @@ class _ChatPageState extends State<ChatPage> {
 
       setState(() {
         messages.removeAt(index);
+        messages.removeAt(index - 1);
 
         messages.add(
           JsonData(
@@ -224,7 +225,11 @@ class _ChatPageState extends State<ChatPage> {
             isSend: true,
           ),
         );
-        index++;
+
+        setState(() {
+          index++;
+          isCorrectAnswer = true;
+        });
       });
     } else {
       setState(() {
